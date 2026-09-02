@@ -1,6 +1,6 @@
 # Gibberish
 
-A .NET library and command-line tool that turns readable Latin text into unreadable gibberish. It applies a sequence of substitution ciphers: shuffle letters, shuffle punctuation, then optionally map the Latin alphabet onto another script (Georgian or Thai).
+A .NET library tool that turns readable Latin text into unreadable gibberish. It applies a sequence of substitution ciphers: shuffle letters, shuffle punctuation, then optionally map the Latin alphabet onto another script (Georgian or Thai).
 
 This is a **fun obfuscation tool**, not encryption. Do not use it to protect secrets.
 
@@ -30,16 +30,6 @@ Letter and punctuation transforms each have two permutation modes:
 ## Requirements
 
 - [.NET 10 SDK](https://dotnet.microsoft.com/download)
-
-## Solution layout
-
-| Project | Role |
-| --- | --- |
-| `Gibberish` | Core library: translator, formatter, character data, and cipher helpers |
-| `GibberishConsole` | CLI that reads a file, transforms it, and writes a new file |
-| `Gibberish.Tests` | NUnit tests for the translator, worker, and shuffler |
-
-Open `Gibberish.slnx` in your IDE, or use the `dotnet` CLI from the repo root.
 
 ## Library usage
 
@@ -171,25 +161,3 @@ dotnet run --project GibberishConsole -- --help
 ```
 
 Omitted options use the library defaults listed above.
-
-## Build and test
-
-```bash
-dotnet build Gibberish.slnx
-dotnet test Gibberish.slnx
-```
-
-Tests cover capitalization, letter and punctuation modes, character-set replacement, dictionary joining, and shuffle uniqueness.
-
-## How the pipeline works
-
-```
-input
-  → capitalization (optional)
-  → letter cipher (optional)
-  → punctuation cipher (optional)
-  → script replacement (optional)
-  → output
-```
-
-Each cipher is a 1:1 character substitution built from a shuffled source list (`Shuffler.CypherShuffle`) and applied by `GibberishWorker.ReplaceCharacters`. Characters with no mapping are copied through unchanged, which is why spaces, digits, and unmatched symbols survive.

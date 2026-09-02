@@ -8,10 +8,10 @@
         <PackageId>Bonar.Gibberish</PackageId>
         <Title>Gibberish - Subsitution Obfuscation  </Title>
         <Authors>Bill.Bonar</Authors>
-        <Version>1.0.0</Version>
-        <Description>A .NET library and command-line tool that turns readable Latin text into unreadable gibberish. It applies a sequence of substitution ciphers: shuffle letters, shuffle punctuation, then optionally map the Latin alphabet onto another script (Georgian or Thai).</Description>
+        <Version>1.0.1</Version>
+        <Description>A .NET library that turns readable Latin text into unreadable gibberish. It applies a sequence of substitution ciphers: shuffle letters, shuffle punctuation, then optionally map the Latin alphabet onto another script (Georgian or Thai).</Description>
         <Copyright>2024</Copyright>
-        <PackageProjectUrl>http://bonar.org/projects</PackageProjectUrl>
+        <PackageProjectUrl>http://bonar.org/projects/gibberish</PackageProjectUrl>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <RepositoryUrl>https://github.com/wbonar/Gibberish</RepositoryUrl>
     </PropertyGroup>
