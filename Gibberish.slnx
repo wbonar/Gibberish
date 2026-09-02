@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Gibberish.Tests/Gibberish.Tests.csproj" />
+  <Project Path="Gibberish/Gibberish.csproj" />
+  <Project Path="GibberishConsole/GibberishConsole.csproj" />
+</Solution>
